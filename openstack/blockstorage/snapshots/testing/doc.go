@@ -1,2 +1,2 @@
-// snapshots_v2
+// snapshots
 package testing

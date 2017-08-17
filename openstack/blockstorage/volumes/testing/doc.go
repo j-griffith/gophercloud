@@ -1,2 +1,2 @@
-// volumes_v2
+// volumes
 package testing

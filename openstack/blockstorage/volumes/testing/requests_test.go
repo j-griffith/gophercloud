@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/gophercloud/gophercloud/openstack/blockstorage/extensions/volumetenants"
-	"github.com/gophercloud/gophercloud/openstack/blockstorage/v2/volumes"
+	"github.com/gophercloud/gophercloud/openstack/blockstorage/volumes"
 	"github.com/gophercloud/gophercloud/pagination"
 	th "github.com/gophercloud/gophercloud/testhelper"
 	"github.com/gophercloud/gophercloud/testhelper/client"
