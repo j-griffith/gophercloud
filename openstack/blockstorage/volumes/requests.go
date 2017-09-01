@@ -67,6 +67,15 @@ func Delete(client *gophercloud.ServiceClient, id string) (r DeleteResult) {
 	return
 }
 
+// ForceDelete issues a Delete using the force flag (available in Cinder version 3.23)
+func ForceDelete(client *gophercloud.ServiceClient, id string) (r DeleteResult) {
+	client.Microversion = "3.23"
+	url := deleteURL(client, id)
+	url += "?force=True"
+	_, r.Err = client.Delete(url, nil)
+	return
+}
+
 // Get retrieves the Volume with the provided ID. To extract the Volume object
 // from the response, call the Extract method on the GetResult.
 func Get(client *gophercloud.ServiceClient, id string) (r GetResult) {
