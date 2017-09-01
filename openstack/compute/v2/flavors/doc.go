@@ -14,16 +14,16 @@ Example to List Flavors
 
 	allPages, err := flavors.ListDetail(computeClient, listOpts).AllPages()
 	if err != nil {
-		panic("Unable to list flavors: %s", err)
+		panic(err)
 	}
 
 	allFlavors, err := flavors.ExtractFlavors(allPages)
 	if err != nil {
-		panic("Unable to extract flavors: %s", err)
+		panic(err)
 	}
 
 	for _, flavor := range allFlavors {
-		fmt.Println("%+v\n", flavor)
+		fmt.Printf("%+v\n", flavor)
 	}
 
 Example to Create a Flavor
@@ -39,7 +39,7 @@ Example to Create a Flavor
 
 	flavor, err := flavors.Create(computeClient, createOpts).Extract()
 	if err != nil {
-		panic("Unable to create flavor: %s", err)
+		panic(err)
 	}
 */
 package flavors

@@ -124,7 +124,7 @@ type CreateOpts struct {
 }
 
 // ToFlavorCreateMap constructs a request body from CreateOpts.
-func (opts *CreateOpts) ToFlavorCreateMap() (map[string]interface{}, error) {
+func (opts CreateOpts) ToFlavorCreateMap() (map[string]interface{}, error) {
 	return gophercloud.BuildRequestBody(opts, "flavor")
 }
 
@@ -145,6 +145,12 @@ func Create(client *gophercloud.ServiceClient, opts CreateOptsBuilder) (r Create
 // result into a Flavor.
 func Get(client *gophercloud.ServiceClient, id string) (r GetResult) {
 	_, r.Err = client.Get(getURL(client, id), &r.Body, nil)
+	return
+}
+
+// Delete deletes the specified flavor ID.
+func Delete(client *gophercloud.ServiceClient, id string) (r DeleteResult) {
+	_, r.Err = client.Delete(deleteURL(client, id), nil)
 	return
 }
 

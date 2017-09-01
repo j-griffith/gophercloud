@@ -9,16 +9,16 @@ Example to List Networks
 
 	allPages, err := networks.List(computeClient).AllPages()
 	if err != nil {
-		panic("Unable to retrieve networks: %s", err)
+		panic(err)
 	}
 
 	allNetworks, err := networks.ExtractNetworks(allPages)
 	if err != nil {
-		panic("Unable to extract networks: %s", err)
+		panic(err)
 	}
 
 	for _, network := range allNetworks {
-		fmt.Println("%+v\n", network)
+		fmt.Printf("%+v\n", network)
 	}
 */
 package networks

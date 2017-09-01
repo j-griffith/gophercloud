@@ -9,9 +9,9 @@ Example to Retrieve Limits for a Tenant
 
 	limits, err := limits.Get(computeClient, getOpts).Extract()
 	if err != nil {
-		panic("Unable to retrieve limits: %s", err)
+		panic(err)
 	}
 
-	fmt.Println("%+v\n", limits)
+	fmt.Printf("%+v\n", limits)
 */
 package limits
